@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>リハビリテーションの対象 | リハビリテーション課 | 附属 三宅リハビリテーション病院</title>
+<style>
+  :root {
+    --color-bg: #F2F7FB;
+    --color-accent: #4A8FC2;
+    --color-accent-dark: #36719C;
+    --color-text: #33414C;
+    --color-text-light: #7E94A3;
+    --color-card-bg: #FFFFFF;
+    --color-border: #DCE9F2;
+    --color-accent-soft: #E7F2FA;
+    --font-base: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-base);
+    color: var(--color-text);
+    background: var(--color-bg);
+    line-height: 1.8;
+    font-size: 16px;
+  }
+
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+
+  .container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  section { padding: 64px 0; }
+
+  h2 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+    color: var(--color-text);
+  }
+
+  .section-lead {
+    font-size: 14px;
+    color: var(--color-accent);
+    letter-spacing: 0.15em;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  .section-head { text-align: center; margin-bottom: 40px; }
+
+  /* ===== パンくず／ページヘッダー ===== */
+  .page-header {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+    padding: 56px 0 64px;
+    color: #fff;
+  }
+
+  .breadcrumb {
+    font-size: 13px;
+    opacity: 0.85;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .breadcrumb a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .page-header .eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    opacity: 0.85;
+    margin-bottom: 10px;
+  }
+
+  .page-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin-bottom: 16px;
+  }
+
+  @media (min-width: 768px) {
+    .page-header h1 { font-size: 36px; }
+  }
+
+  .page-header .lead-text {
+    font-size: 15px;
+    line-height: 1.9;
+    max-width: 640px;
+    opacity: 0.95;
+  }
+
+  /* ===== イントロ文 ===== */
+  .intro-section {
+    background: var(--color-card-bg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .intro-statement {
+    background: var(--color-accent-soft);
+    border-left: 4px solid var(--color-accent);
+    padding: 24px 28px;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.9;
+    border-radius: 0 10px 10px 0;
+    margin-bottom: 28px;
+  }
+
+  .intro-body {
+    font-size: 15px;
+    color: var(--color-text);
+    line-height: 1.95;
+  }
+
+  /* ===== こんな方が対象です ===== */
+  .check-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 8px;
+  }
+
+  @media (min-width: 768px) {
+    .check-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .check-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+
+  .check-item .check-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .check-item .check-icon svg {
+    width: 16px;
+    height: 16px;
+    stroke: #fff;
+    fill: none;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .check-item p {
+    font-size: 14px;
+    line-height: 1.8;
+    padding-top: 3px;
+  }
+
+
+  /* ===== 対象疾患（病棟別） ===== */
+  .disease-section {
+    background: var(--color-card-bg);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .ward-block { margin-bottom: 56px; }
+  .ward-block:last-child { margin-bottom: 0; }
+
+  .ward-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 10px;
+  }
+
+  .ward-heading .ward-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ward-heading .ward-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: #fff;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .ward-heading .ward-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 2px;
+  }
+
+  .ward-heading h3 {
+    font-size: 21px;
+    font-weight: 700;
+  }
+
+  .ward-note {
+    font-size: 13px;
+    color: var(--color-text-light);
+    margin-bottom: 22px;
+    padding-left: 58px;
+  }
+
+  .rehab-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .rehab-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 24px 26px;
+  }
+
+  .rehab-card-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .rehab-card .rehab-desc {
+    font-size: 13.5px;
+    color: var(--color-text-light);
+    line-height: 1.85;
+    margin-bottom: 12px;
+  }
+
+  .rehab-card-head .tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+    background: var(--color-accent-soft);
+    padding: 5px 14px;
+    border-radius: 999px;
+  }
+
+  .limit-badge {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #fff;
+    background: var(--color-accent-dark);
+    padding: 6px 14px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  .limit-badge.no-limit {
+    background: none;
+    color: var(--color-text-light);
+    font-weight: 400;
+    padding: 6px 0;
+  }
+
+  .rehab-card .disease-text {
+    font-size: 14px;
+    line-height: 1.95;
+    color: var(--color-text);
+  }
+
+  .rehab-card .disease-text + .disease-text {
+    margin-top: 12px;
+  }
+
+  .rehab-card .disease-text .label {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--color-accent-dark);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .rehab-card .examples {
+    margin-top: 4px;
+    font-size: 12.5px;
+    color: var(--color-text-light);
+    line-height: 1.85;
+  }
+
+  .rehab-card.exempt {
+    background: #FFFBEF;
+    border-color: #E8C84A;
+  }
+
+  .rehab-card.exempt .rehab-card-head .tag {
+    color: #8a7000;
+    background: rgba(232,200,74,0.3);
+  }
+
+  .rehab-card.exempt .limit-badge {
+    background: #C9A300;
+  }
+
+  /* 用語説明（注釈ボックス） */
+  .term-note {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 12.5px;
+    color: var(--color-text-light);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-top: 22px;
+    line-height: 1.9;
+  }
+
+  .term-note .note-mark {
+    flex-shrink: 0;
+    font-weight: 700;
+    color: var(--color-accent);
+  }
+
+  /* ===== 入院・外来の比較 ===== */
+  .compare-section {
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  @media (min-width: 768px) {
+    .compare-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .compare-card {
+    border-radius: 14px;
+    padding: 32px 28px;
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+  }
+
+  .compare-card.featured {
+    background: linear-gradient(135deg, var(--color-accent-soft) 0%, var(--color-card-bg) 100%);
+    border-color: var(--color-accent);
+  }
+
+  .compare-card .compare-label {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 8px;
+  }
+
+  .compare-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .compare-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .compare-card li {
+    font-size: 14px;
+    line-height: 1.8;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .compare-card li::before {
+    content: '';
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    margin-top: 9px;
+  }
+
+  /* ===== ご利用の流れ ===== */
+  .flow-section { background: var(--color-bg); }
+
+  .flow-list {
+    list-style: none;
+    counter-reset: flow;
+    display: grid;
+    gap: 16px;
+  }
+
+  .flow-list li {
+    counter-increment: flow;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    padding: 20px 22px;
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+  }
+
+  .flow-list li::before {
+    content: counter(flow);
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: #fff;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+  }
+
+  .flow-list .flow-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .flow-list .flow-desc {
+    font-size: 13.5px;
+    color: var(--color-text-light);
+    line-height: 1.85;
+  }
+
+  /* ===== 相談窓口 / お問い合わせ ===== */
+  .contact-note {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    background: var(--color-accent-soft);
+    border-left: 4px solid var(--color-accent);
+    border-radius: 0 10px 10px 0;
+    padding: 28px 30px;
+    margin-top: 8px;
+  }
+
+  .contact-note-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contact-note-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: #fff;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .contact-note-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-accent-dark);
+    margin-bottom: 8px;
+  }
+
+  .contact-note-text {
+    font-size: 14px;
+    color: var(--color-text);
+    line-height: 1.9;
+  }
+
+  /* ===== 戻るボタン ===== */
+  .back-link-wrap {
+    text-align: center;
+    padding-bottom: 80px;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    padding: 12px 28px;
+    border-radius: 999px;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .back-link:hover {
+    background: var(--color-accent);
+    color: #fff;
+  }
+
+  .back-link svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* ===== FAB ===== */
+  .fab {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--color-accent);
+    color: #fff;
+    padding: 14px 22px 14px 16px;
+    border-radius: 999px;
+    box-shadow: 0 6px 20px rgba(54,113,156,0.35);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .fab:hover {
+    background: var(--color-accent-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(54,113,156,0.42);
+  }
+
+  .fab svg {
+    width: 20px;
+    height: 20px;
+    stroke: #fff;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 480px) {
+    .fab span { display: none; }
+    .fab { padding: 14px; border-radius: 50%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== ページヘッダー ===== -->
+<header class="page-header">
+  <div class="container">
+    <p class="breadcrumb">
+      <a href="index.html">TOP</a> ＞ リハビリテーションの対象
+    </p>
+    <p class="eyebrow">FOR PATIENTS</p>
+    <h1>リハビリテーションの対象</h1>
+    <p class="lead-text">
+      「どんな病気やけがの方がリハビリを受けられるのか」「入院と外来でどう違うのか」――
+      ご本人やご家族からよくいただくご質問に、できるだけわかりやすい言葉でお答えします。
+    </p>
+  </div>
+</header>
+
+<!-- ===== イントロ ===== -->
+<section class="intro-section">
+  <div class="container">
+    <div class="intro-statement">
+      けがや病気、手術、加齢などによって「起き上がる」「歩く」「食べる」「話す」といった日常の動作が難しくなった方が、当院リハビリテーションの対象です。
+    </div>
+    <p class="intro-body">
+      当院では、整形外科の病気やけが、脳卒中（脳の血管が詰まったり破れたりする病気）、長期の安静による体力の低下など、幅広い状態の患者様にリハビリテーションを提供しています。年齢を問わず、入院中の方だけでなく、自宅から通っていただく外来の方もご利用いただけます。外来を受診してご相談いただくか、すでに通われている病院やサービスがある場合は主治医にご相談のうえ、当院にお問い合わせください。
+    </p>
+
+    <div class="check-grid">
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <p>骨折や手術のあと、思うように体が動かしにくくなった</p>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <p>脳卒中などのあと、手足にまひや言葉の不自由さが残った</p>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <p>退院後の生活に不安があり、自宅に戻る準備をしたい</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 入院・外来の違い ===== -->
+<section class="compare-section">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-lead">INPATIENT / OUTPATIENT</p>
+      <h2>入院でのリハビリ・外来でのリハビリ</h2>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card featured">
+        <p class="compare-label">INPATIENT</p>
+        <h3>入院でのリハビリ</h3>
+        <ul>
+          <li>手術直後や急な病気のあと、できるだけ早い時期から始める集中的なリハビリです。</li>
+          <li>毎日決まった時間にリハビリを行い、日常生活の動作を一つずつ取り戻していきます。</li>
+          <li>看護師や医師など、他の医療スタッフと連携しながら、安全に配慮して進めます。</li>
+          <li>退院後の生活を見据えて、ご自宅の環境やご家族の状況も含めて相談しながら進めます。</li>
+        </ul>
+      </div>
+
+      <div class="compare-card">
+        <p class="compare-label">OUTPATIENT</p>
+        <h3>外来でのリハビリ</h3>
+        <ul>
+          <li>退院後やけがの治療後、ご自宅から通っていただきながら続けるリハビリです。</li>
+          <li>体の状態や生活のペースに合わせて、通う頻度や内容を調整します。</li>
+          <li>「もう一段階、生活の質を上げたい」という目標に合わせた練習も行います。</li>
+          <li>地域のかかりつけ医や他の施設とも連携し、長く付き合っていける形を一緒に考えます。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 対象疾患 ===== -->
+<section class="disease-section">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-lead">CONDITIONS</p>
+      <h2>リハビリテーションの対象疾患</h2>
+    </div>
+
+    <!-- 一般病棟のリハビリ -->
+    <div class="ward-block">
+      <div class="ward-heading">
+        <div class="ward-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v6"/></svg></div>
+        <div>
+          <p class="ward-eyebrow">GENERAL WARD</p>
+          <h3>一般病棟のリハビリ</h3>
+        </div>
+      </div>
+
+      <div class="rehab-grid">
+
+        <div class="rehab-card">
+          <div class="rehab-card-head">
+            <span class="tag">脳血管リハビリ</span>
+          </div>
+          <p class="rehab-desc">脳や神経の病気によって、体の動かしにくさや言葉の不自由さなどが出た方を対象に行うリハビリです。</p>
+          <p class="disease-text">
+            パーキンソン病、多系統萎縮症（MSA）、ALS（筋萎縮性側索硬化症）、末梢神経障害、皮膚筋炎、多発性筋炎、後縦靱帯骨化症、失語症、失認および失行症、高次脳機能障害
+          </p>
+
+          <div class="rehab-card-head" style="margin-top:18px;">
+            <span class="tag">※算定日数上限除外対象</span>
+            <span class="limit-badge no-limit">期限なし</span>
+          </div>
+          <p class="disease-text">
+            高次脳機能障害、多発性硬化症、重症筋無力症、全身性エリテマトーデス、ALS、パーキンソン関連疾患、後縦靱帯骨化症、もやもや病、MSA、ギラン・バレー症候群　など
+          </p>
+          <p class="examples">「算定日数上限」とは、保険の決まりで定められたリハビリを受けられる期間の目安のことです。上記の病気は、この期間の制限を受けず、必要な間はリハビリを続けていただけます。</p>
+        </div>
+
+        <div class="rehab-card">
+          <div class="rehab-card-head">
+            <span class="tag">運動器リハビリ</span>
+          </div>
+          <p class="rehab-desc">骨・関節・筋肉などの不調によって、立つ・歩く・座るといった動作が難しくなった方を対象に行うリハビリです。</p>
+          <p class="disease-text">
+            関節の変性疾患（変形性関節症）、関節の炎症性疾患（リウマチ）、熱傷瘢痕による関節拘縮、運動器不安定症、下肢筋力低下
+          </p>
+          <p class="examples">このほか、下の「回復期病棟のリハビリ」に記載の対象疾患も含まれます。</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 回復期病棟のリハビリ -->
+    <div class="ward-block">
+      <div class="ward-heading">
+        <div class="ward-icon"><svg viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></svg></div>
+        <div>
+          <p class="ward-eyebrow">RECOVERY WARD</p>
+          <h3>回復期病棟のリハビリ</h3>
+        </div>
+      </div>
+      <p class="ward-note">下記の「上限の日数」は、回復期病棟に移られた日（回復期転入日）から数えた日数です。</p>
+
+      <div class="rehab-grid">
+
+        <div class="rehab-card">
+          <div class="rehab-card-head">
+            <span class="tag">脳血管リハビリ</span>
+            <span class="limit-badge">150日以内</span>
+          </div>
+          <p class="rehab-desc">脳や神経の病気によって、体の動かしにくさや言葉の不自由さなどが出た方を対象に行うリハビリです。</p>
+          <p class="disease-text">
+            脳血管疾患、くも膜下出血のシャント術後、頭部外傷、脊髄損傷、脊髄炎、頚椎症性脊髄症、脳腫瘍、脳炎、急性脳症、多発性神経炎、多発性硬化症　など
+            <span class="examples">（被殻出血、ラクナ梗塞、ウェルニッケ脳症、低酸素脳症、ギラン・バレー症候群、橋梗塞、脳腫瘍、水頭症など）</span>
+          </p>
+        </div>
+
+        <div class="rehab-card">
+          <div class="rehab-card-head">
+            <span class="tag">脳血管リハビリ（重症例）</span>
+            <span class="limit-badge">180日以内</span>
+          </div>
+          <p class="disease-text">
+            高次脳機能障害を伴った重症脳血管障害、重度の頚髄損傷を含む多部位外傷
+          </p>
+          <p class="examples">重症・重度の明確な基準は定められておらず、継続してリハビリを行うことで改善が見込めると医師が判断した場合が対象です。</p>
+        </div>
+
+        <div class="rehab-card">
+          <div class="rehab-card-head">
+            <span class="tag">廃用症候群</span>
+            <span class="limit-badge">90日以内</span>
+          </div>
+          <p class="rehab-desc">長期間の安静によって体力や筋力が落ちてしまった方を対象に、回復を目指して行うリハビリです。</p>
+          <p class="disease-text">
+            外科手術または肺炎等の治療の際の安静による廃用症候群
+            <span class="examples">（誤嚥性肺炎後の廃用症候群など）</span>
+          </p>
+        </div>
+
+        <div class="rehab-card">
+          <div class="rehab-card-head">
+            <span class="tag">運動器リハビリ</span>
+            <span class="limit-badge">90日以内</span>
+          </div>
+          <p class="rehab-desc">骨・関節・筋肉などの不調によって、立つ・歩く・座るといった動作が難しくなった方を対象に行うリハビリです。</p>
+          <p class="disease-text">
+            大腿骨、骨盤、脊椎、股関節もしくは膝関節の骨折、または二肢以上の多発骨折
+            <span class="examples">（頚椎・胸椎・腰椎骨折、恥骨・坐骨等の骨盤骨折、膝蓋骨骨折、膝関節内骨折、脛骨高原骨折など）</span>
+          </p>
+        </div>
+
+        <div class="rehab-card">
+          <div class="rehab-card-head">
+            <span class="tag">運動器リハビリ</span>
+            <span class="limit-badge">90日以内</span>
+          </div>
+          <p class="disease-text">
+            股関節または膝関節の置換術後の状態
+          </p>
+        </div>
+
+        <div class="rehab-card">
+          <div class="rehab-card-head">
+            <span class="tag">運動器リハビリ</span>
+            <span class="limit-badge">60日以内</span>
+          </div>
+          <p class="disease-text">
+            大腿骨、骨盤、脊椎、股関節もしくは膝関節の神経・筋または靱帯損傷後の状態
+            <span class="examples">（腰椎椎間板ヘルニア術後、腰部脊柱管狭窄症術後、アキレス腱断裂、筋断裂、変形性膝関節症または変形性股関節症の置換術以外の術後など）</span>
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="term-note">
+      <span class="note-mark">※</span>
+      <span>上記の病名・対象は当院での取り扱いの一例です。同じ病名でも症状の程度などにより対象とならない場合や、上限日数の取り扱いが異なる場合があります。詳しくは外来受診の上でのご相談、またはかかりつけの主治医にご確認ください。</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ご利用の流れ ===== -->
+<section class="flow-section">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-lead">HOW TO START</p>
+      <h2>リハビリ開始までの流れ</h2>
+    </div>
+
+    <ul class="flow-list">
+      <li>
+        <div>
+          <p class="flow-title">主治医にご相談</p>
+          <p class="flow-desc">まずは主治医に、体の動かしにくさや困っていることをお伝えください。リハビリテーションが必要かどうかを医師が判断します。</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <p class="flow-title">評価（体の状態を確認します）</p>
+          <p class="flow-desc">理学療法士・作業療法士・言語聴覚士などが、体の動き、生活動作、飲み込みや会話の様子などを確認します。</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <p class="flow-title">目標とプログラムを決めます</p>
+          <p class="flow-desc">評価の結果をもとに、「歩けるようになりたい」「自宅で家事をしたい」など、ご本人の希望に沿った目標とリハビリの内容を一緒に考えます。</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <p class="flow-title">リハビリテーションの実施</p>
+          <p class="flow-desc">決めた内容に沿って、入院または外来でリハビリを進めます。状態の変化に合わせて、内容は定期的に見直します。</p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="contact-note">
+      <div class="contact-note-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <div>
+        <p class="contact-note-title">ご不明な点はお気軽にご相談ください</p>
+        <p class="contact-note-text">
+          「自分（家族）の場合はリハビリの対象になるのか」など、わからないことがあれば、外来を受診してご相談いただくか、すでに通われている病院やサービスがある場合は主治医にご相談のうえ、当院にお問い合わせください。担当のスタッフが丁寧にご説明いたします。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="back-link-wrap">
+  <a class="back-link" href="index.html">
+    <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    リハビリテーション課トップへ戻る
+  </a>
+</div>
+
+<!-- ===== FAB ===== -->
+<a class="fab" href="https://www.miyake.or.jp/recruit/">
+  <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+  <span>採用情報</span>
+</a>
+
+</body>
+</html>
